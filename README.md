@@ -1,5 +1,5 @@
 # Zomato Restaurants
-What is the average price of the Sydney's Top 100 restuarants? Have a guess before you find out the answer below!
+What is the average price of the Sydney's Top 100 restaurants? Have a guess before you find out the answer below!
 
 We will go through a simple introduction into how to extract data using the Zomato API.
 
