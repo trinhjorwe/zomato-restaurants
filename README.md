@@ -15,9 +15,59 @@ To get started with the Zomato API, you first need to [request an API key](https
 
 Let's have a look at what one of the functions returns
 
-#### /search function
+#### /cities function
+This function retrieves the [city details](https://developers.zomato.com/documentation#!/common/cities). Let's put in your API key into _user-key_, and *Sydney* for parameter _q_. We get the following:
 
-
+        {
+          "location_suggestions": [
+            {
+              "id": 260,
+              "name": "Sydney, NSW",
+              "country_id": 14,
+              "country_name": "Australia",
+              "country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_14.png",
+              "should_experiment_with": 0,
+              "discovery_enabled": 0,
+              "has_new_ad_format": 1,
+              "is_state": 0,
+              "state_id": 128,
+              "state_name": "New South Wales",
+              "state_code": "NSW"
+            },
+            {
+              "id": 3171,
+              "name": "Sydney, Atlantic Provinces, NS",
+              "country_id": 37,
+              "country_name": "Canada",
+              "country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_37.png",
+              "should_experiment_with": 0,
+              "discovery_enabled": 0,
+              "has_new_ad_format": 0,
+              "is_state": 0,
+              "state_id": 144,
+              "state_name": "Nova Scotia",
+              "state_code": "NS"
+            },
+            {
+              "id": 3169,
+              "name": "North Sydney, NS",
+              "country_id": 37,
+              "country_name": "Canada",
+              "country_flag_url": "https://b.zmtcdn.com/images/countries/flags/country_37.png",
+              "should_experiment_with": 0,
+              "discovery_enabled": 0,
+              "has_new_ad_format": 0,
+              "is_state": 0,
+              "state_id": 144,
+              "state_name": "Nova Scotia",
+              "state_code": "NS"
+            }
+          ],
+          "status": "success",
+          "has_more": 0,
+          "has_total": 0
+        }
+        
 
 ## Example: Top 100 places for dinner in Sydney
 So with this example we're trying to find what is the average price to eat dinner in one at Sydney's top 100 places. Before we answer this question, we should think about what data points we need.
