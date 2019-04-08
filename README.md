@@ -2,12 +2,10 @@
 # Zomato Restaurants
 What is the average price of having dinner at one of Sydney's Top 100 restaurants? Have a guess before you find out the answer below!
 
-In this repository we will go through an example to:
+In this README we will briefly go through an example to: **(for a full detailed guide - check out my Medium article!)**
 1. Extract data using the Zomato API
 2. Transform it into a consumable and readable format
 3. Make sense of the data (by applying some descriptive statistics)
-
-> _If you are interested I will be posting a detailed guide on Medium that explains step by step how to execute the steps above_
 
 ### What is Zomato?
 It is a platform that holds information on over 1 million restaurants globally, including ratings, reviews and many more. It is a place that I visit before checking out a new place to eat, or even after going to one I've tried (just to see what everyone else thinks of it).
@@ -36,6 +34,16 @@ See [ZomatoJsonDump.py](https://github.com/trinhjorwe/zomato-restaurants/blob/ma
 > A big thanks to https://github.com/fatihsucu/pyzomato for providing a Python Wrapper to access the Zomato API!
 
 ## 2. Transform it into a consumable and readable format
+Our aim in this section will be to get the JSON formatted data into a simple-to-read tabular format. We deconstruct the JSON , by iterating through the list of dictionaries, source our interested values from each dictionary and append it as a new row to a DataFrame.
+
+See  [ReadZomatoJSON.py](https://github.com/trinhjorwe/zomato-restaurants/blob/master/ZomatoJsonDump.py)
+
+## 3. Make sense of the data (by applying some descriptive statistics)
+Here we attempt to answer our first question "What is the average price of having dinner at one of Sydney's Top 100 restaurants?". We find that the average cost for two is $107.90, however the percentage of restaurants below this value is 66% - this makes us think whether the mean is the best measure of central tendency in this case. 
+
+As a result we plot this on a histogram to visualise our data
+
+
 
 
 
