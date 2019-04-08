@@ -5,7 +5,8 @@ p = Pyzomato('<insert your API key here>')
 
 """
 As the search function in Zomato API only returns a maximum of 20 results per call, we'll need to
-five times. """
+five times. 
+"""
 
 # Create an empty list, that will be used to append each dictionary returned.
 restaurantList = []
