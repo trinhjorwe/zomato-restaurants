@@ -2,7 +2,7 @@
 # Zomato Restaurants
 What is the average price of having dinner at one of Sydney's Top 100 restaurants? Have a guess before you find out the answer below!
 
-We will go through an example to answer:
+In this repository we will go through an example to answer:
 1. How to extract data using the Zomato API
 2. How to transform it into a consumable and readable format
 3. How to make sense of the data (by applying some descriptive statistics)
@@ -68,6 +68,7 @@ This function retrieves the [city details](https://developers.zomato.com/documen
           "has_total": 0
         }
         
+If you look carefully at what's returned it is a dictionary with multiple key:value pairs, with the most important one with the information we want having a key of _location_suggestions_. It's value is a list of dictionaries. (let's remember this as it'll be useful when we start wrangling the data)
 
 ## Example: Top 100 places for dinner in Sydney
 So with this example we're trying to find what is the average price to eat dinner in one at Sydney's top 100 places. Before we answer this question, we should think about what data points we need.
