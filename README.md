@@ -26,12 +26,12 @@ These will be our key data points.
 As I will be sourcing data about each restaurant I use the _/search_ function. This function takes many parameters which were found by using functions such as:
 * /locations: To source the _latitude_ and _longitude_ coordinates for "Sydney".
 * /category: To source the ID = 10 for the "Dinner" category.
+
 To retrieve the Top 100 restaurants, we needed to sort by _rating_ and specify the order as _desc_. 
 
-The /search function only returns a maximum of 20 restaurants per call, with a maximum total of 100 restaurants. As a result each dictionary returned was appended to a list which was then dumped into a JSON file for later consumption.
+The /search function only returns a maximum of 20 restaurants per call, with a maximum total of 100 restaurants. As a result each dictionary returned was appended to a list which was then dumped into a JSON file for consumption later on.
 
 See [ZomatoJsonDump.py](https://github.com/trinhjorwe/zomato-restaurants/blob/master/ZomatoJsonDump.py)
-
 
 > A big thanks to https://github.com/fatihsucu/pyzomato for providing a Python Wrapper to access the Zomato API!
 
