@@ -41,9 +41,15 @@ See  [ReadZomatoJSON.py](https://github.com/trinhjorwe/zomato-restaurants/blob/m
 ## 3. Make sense of the data (by applying some descriptive statistics)
 Here we attempt to answer our first question "What is the average price of having dinner at one of Sydney's Top 100 restaurants?". We find that the average cost for two is $107.90, however the percentage of restaurants below this value is 66% - this makes us think whether the mean is the best measure of central tendency in this case. 
 
-As a result we plot this on a histogram to visualise our data
+As a result we plot this on a histogram to visualise our data.
 
+![histogram_v1](histogram_v1.PNG)
 
+You can see the data is significantly skewed to the left, which indicates it would be more appropriate to use the median as our measure of central tendency. We then find the median to be $80.00 with 48% of values to be below the median, this looks to be the more appropriate measure of central tendency.
+
+HOWEVER - after plotting the data it is evident that there is are a few values sitting around the $20 mark, and seems to be unusually low. This warrants some deeper investigation.
+
+### 3.1 Investigating outliers
 
 
 
