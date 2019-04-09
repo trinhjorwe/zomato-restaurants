@@ -51,7 +51,14 @@ You can see the data is significantly skewed to the left, which indicates it wou
 HOWEVER - after plotting the data it is evident that there is are a few values sitting around the $20 mark, and seems to be unusually low. This warrants some deeper investigation.
 
 ### 3.1 Investigating outliers
-To do so, we grabbed the 10 cheapest restaurants based on _average_cost_for_two_ and investigated them
+To do so, we grabbed the 10 cheapest restaurants based on _average_cost_for_two_ and investigated them:
+
+![discarded-restaurants](discarded-restaurants.PNG)
+
+Evidently the _cuisines_ column included values for "Ice Cream", "Cafe Food" and "Cofee and Tea", which meant these restaurants were in fact cafes/desert parlours and not places for dinner (unless you have ice cream for dinner...). We filted out these places hence reducing our dataset to 92 restaurants.
+
+### Let's compute some descriptive statistics again, now that our data has been cleaned...
+Our median is still $80.00, but with only 43.48% of values being below the median. Funnily enough our median hasn't changed, which is a good thing! As it reinforces it's insensitivity to outliers unlike the mean. If we visualise the distribution again 
 
 
 
