@@ -44,7 +44,7 @@ Does this appropriately describe the central tendency of the data? Maybe but to 
 
 As a result we plot this on a histogram to visualise our data.
 
-![histogram_v1](histogram_v1.PNG)
+![Histogram V1](restaurants-histogramV1.PNG)
 
 You can see the data is significantly skewed to the left, which indicates it would be more appropriate to use the median as our measure of central tendency. We then find the median to be $80.00 with 48% of values to be below the median, this looks to be the more appropriate measure of central tendency.
 
@@ -58,7 +58,16 @@ To do so, we grabbed the 10 cheapest restaurants based on _average_cost_for_two_
 Evidently the _cuisines_ column included values for "Ice Cream", "Cafe Food" and "Cofee and Tea", which meant these restaurants were in fact cafes/desert parlours and not places for dinner (unless you have ice cream for dinner...). We filted out these places hence reducing our dataset to 92 restaurants.
 
 ### Let's compute some descriptive statistics again, now that our data has been cleaned...
-Our median is still $80.00, but with only 43.48% of values being below the median. Funnily enough our median hasn't changed, which is a good thing! As it reinforces it's insensitivity to outliers unlike the mean. If we visualise the distribution again 
+Our median is still $80.00, but with only 43.48% of values being below the median. Funnily enough our median hasn't changed, which is a good thing! As it reinforces it's insensitivity to outliers unlike the mean. If we visualise the distribution again:
+![Histogram V2](restaurants-histogramV2.PNG)
+
+Now we have no more values that are below the $20 mark!
+
+## Finally...
+This marks the end of my brief walkthrough, if this was not detailed enough please refer to my Medium article.
+Otherwise if you have any questions or suggestions for improvement let me know as i'd be more than happy to hear about it!
+
+Thanks!
 
 
 
