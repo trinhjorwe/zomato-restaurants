@@ -39,7 +39,8 @@ Our aim in this section will be to get the JSON formatted data into a simple-to-
 See  [ReadZomatoJSON.py](https://github.com/trinhjorwe/zomato-restaurants/blob/master/ZomatoJsonDump.py)
 
 ## 3. Make sense of the data (by applying some descriptive statistics)
-Here we attempt to answer our first question "What is the average price of having dinner at one of Sydney's Top 100 restaurants?". We find that the average cost for two is $107.90, however the percentage of restaurants below this value is 66% - this makes us think whether the mean is the best measure of central tendency in this case. 
+Here we attempt to answer our first question "What is the average price of having dinner at one of Sydney's Top 100 restaurants?". We find that the average cost for two is $107.90, however 66% of the total restaurants lie below this value.
+Does this appropriately describe the central tendency of the data? Maybe but to confirm lets do some more investigation.
 
 As a result we plot this on a histogram to visualise our data.
 
