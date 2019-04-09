@@ -11,7 +11,7 @@ np.set_printoptions(linewidth=desired_width)
 
 
 # Read JSON file of restaurants
-with open('Top100SydneyDinners.json') as json_file:
+with open('Top100DinnersInSydney.json') as json_file:
     allRestaurants = json.load(json_file)
 
 # Create columns for DataFrame
@@ -42,14 +42,14 @@ restaurantTable.index.name = 'id'
 print(restaurantTable)
 
 """
-Analysis section: We can now find out what the average cost for
+ANALYSIS SECTION: We can now find out what the average cost for
 for two people to have dinner at Sydney's Top 100 places.
 """
 
 # Grab the 'average_cost_for_two' column
 costs = restaurantTable['average_cost_for_two']
 avgCosts = costs.mean()
-print("Average Cost for Two = $",avgCosts)
+print("Average Cost for Two = $", avgCosts)
 
 # Is the average the best way to measure central tendency of
 # the Top 100 Places to have Dinner in Sydney?
@@ -68,9 +68,60 @@ x.yaxis.set_major_locator(plt.MultipleLocator(2))
 x.yaxis.set_major_locator(plt.MultipleLocator(1))
 plt.xlabel("Average cost for two ($)")
 plt.ylabel("Number of Places")
-plt.title("Average Costs of Sydney's Top 100 Places for Dinner")
+plt.title("Average Costs of Sydney's Top 100 Places for Dinner - V1")
 plt.show()
 
+# The distribution is significantly skewed to the left, with a few outliers - let's calculate the median
+# and how many values lie below the value.
+medianCost = costs.median()
+belowMedian = costs < medianCost
+numBelowMedian = belowMedian.sum()
+print("The median cost is = $", medianCost)
+print("The percentage of values below the median is ", numBelowMedian*100/costs.count(), "%")
+
+# Set the type of the average_cost_for_two column to int so we can run nsmallest() on it.
+print("Current types: ", restaurantTable.dtypes)
+newRestaurantTable = restaurantTable.astype({'average_cost_for_two': int})
+print("Updated type: ", newRestaurantTable.dtypes)
+
+cheapestRestaurants = newRestaurantTable.nsmallest(10,'average_cost_for_two')
+print(cheapestRestaurants)
+
+# It looks to be that our result has returned a few restaurants that are in fact cafes which would explain
+# why their cost is so low. Looking at their cuisines they have "Ice Cream, Coffee and Tea, Cafe Food". Lets
+# these one's out.
+
+# Create a list of cuisines we do not want, that will be used to filter out the cafes from the dataset
+discardCuisines = ['Ice Cream', 'Coffee and Tea', 'Cafe Food']
+cuisines = newRestaurantTable['cuisines']
+
+discardRestaurants = cuisines.str.contains('|'.join(discardCuisines))
+filteredRestaurants = discardRestaurants == False
+print(newRestaurantTable[discardRestaurants])
+newRestaurantTable = newRestaurantTable[filteredRestaurants]
+print("The size of our updated dataset is ", newRestaurantTable.shape)
+
+# We compute some descriptive statistics again.
+costs = newRestaurantTable.average_cost_for_two
+averageCost = costs.mean()
+medianCost = costs.median()
+belowMedian = costs < medianCost
+numBelowMedian = belowMedian.sum()
+print("The average cost is = $", averageCost)
+print("The median cost is = $", medianCost)
+print("The percentage of values below the median is ", numBelowMedian*100/costs.count(), "%")
+
+# Plot the distribution again.
+sns.set(style="ticks")
+x = sns.distplot(list(costs.values), kde=False, bins=25)
+x.xaxis.set_minor_locator(plt.MultipleLocator(5))
+x.xaxis.set_major_locator(plt.MultipleLocator(20))
+x.yaxis.set_major_locator(plt.MultipleLocator(2))
+x.yaxis.set_major_locator(plt.MultipleLocator(1))
+plt.xlabel("Average cost for two ($)")
+plt.ylabel("Number of Places")
+plt.title("Average Costs of Sydney's Top 100 Places for Dinner - V2")
+plt.show()
 
 
 
