@@ -2,7 +2,7 @@
 # Zomato Restaurants
 What is the average price of having dinner at one of Sydney's Top 100 restaurants? Have a guess before you find out the answer below!
 
-**(For a full detailed guide, please have a look at my [Medium article](https://medium.com/@trinhjorwe/are-sydneys-top-restaurants-really-worth-it-9a1dee3705d1)**
+**For a full detailed guide, please have a look at my [Medium article](https://medium.com/@trinhjorwe/are-sydneys-top-restaurants-really-worth-it-9a1dee3705d1)**
 
 In this README we will **briefly** go through an example to: 
 1. Extract data using the Zomato API
