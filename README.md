@@ -38,7 +38,7 @@ See [ZomatoJsonDump.py](https://github.com/trinhjorwe/zomato-restaurants/blob/ma
 ## 2. Transform it into a consumable and readable format
 Our aim in this section will be to get the JSON formatted data into a simple-to-read tabular format. We deconstruct the JSON , by iterating through the list of dictionaries, source our interested values from each dictionary and append it as a new row to a DataFrame.
 
-See  [ReadZomatoJSON.py](https://github.com/trinhjorwe/zomato-restaurants/blob/master/ZomatoJsonDump.py)
+See  [ReadZomatoJSON.py](https://github.com/trinhjorwe/zomato-restaurants/blob/master/ReadZomatoJSON.py)
 
 ## 3. Make sense of the data (by applying some descriptive statistics)
 Here we attempt to answer our first question "What is the average price of having dinner at one of Sydney's Top 100 restaurants?". We find that the average cost for two is $107.90, however 66% of the total restaurants lie below this value.
