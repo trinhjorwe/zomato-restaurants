@@ -49,7 +49,7 @@ print("Average Cost for Two = $", avgCosts)
 # Compute percentage of values below the mean.
 belowCostMean = costs < costs.mean()
 numBelowCostMean = belowCostMean.sum()
-print("Number of restaurants below the average cost for two mean is = ",numBelowCostMean*100/costs.count(), "%")
+print("Percentage of restaurants below the mean is = ",numBelowCostMean*100/costs.count(), "%")
 
 # Plot the distribution
 sns.set(style="ticks")
@@ -60,7 +60,7 @@ x.yaxis.set_major_locator(plt.MultipleLocator(2))
 x.yaxis.set_major_locator(plt.MultipleLocator(1))
 plt.xlabel("Average cost for two ($)")
 plt.ylabel("Number of Places")
-plt.title("Average Costs of Sydney's Top 100 Places for Dinner - V1")
+plt.title("Average Costs of Sydney's Top Places for Dinner - V1")
 plt.show()
 
 # Calculate the median and percentage of values that lie below the value.
