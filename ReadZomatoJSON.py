@@ -9,7 +9,6 @@ pd.set_option('display.max_columns', 10)
 pd.set_option('display.width', desired_width)
 np.set_printoptions(linewidth=desired_width)
 
-
 # Read JSON file of restaurants
 with open('Top100DinnersInSydney.json') as json_file:
     allRestaurants = json.load(json_file)
@@ -19,7 +18,6 @@ columns = ["name", "locality", "city", "cuisines", "average_cost_for_two", 'aggr
 
 # Create empty DataFrame with above columns
 restaurantTable = pd.DataFrame(columns=columns)
-
 
 # This function loops through each restaurant dictionary in allRestaurants, grabs values for
 # each restaurant which is then grouped into a Series that is appended to the DataFrame
@@ -38,13 +36,9 @@ for restaurantSet in allRestaurants:
         restaurantTable = restaurantTable.append(newRow, ignore_index=True)
 
 restaurantTable.index.name = 'id'
-
 print(restaurantTable)
 
-"""
-ANALYSIS SECTION: We can now find out what the average cost for
-for two people to have dinner at Sydney's Top 100 places.
-"""
+# ANALYSIS SECTION #
 
 # Grab the 'average_cost_for_two' column
 costs = restaurantTable['average_cost_for_two']
@@ -52,7 +46,7 @@ avgCosts = costs.mean()
 print("Average Cost for Two = $", avgCosts)
 
 # Is the average the best way to measure central tendency of
-# the Top 100 Places to have Dinner in Sydney?
+# the Top 100 Places for Dinner in Sydney?
 
 # First, lets have a quick look at how many restaurants are below the mean.
 belowCostMean = costs < costs.mean()
