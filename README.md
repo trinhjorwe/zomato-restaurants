@@ -2,7 +2,9 @@
 # Zomato Restaurants
 What is the average price of having dinner at one of Sydney's Top 100 restaurants? Have a guess before you find out the answer below!
 
-In this README we will **briefly** go through an example to: **(for a full detailed guide & explanations - check out my Medium article!)**
+**(For a full detailed guide, please have a look at my Medium article)**
+
+In this README we will **briefly** go through an example to: 
 1. Extract data using the Zomato API
 2. Transform it into a consumable and readable format
 3. Make sense of the data (by applying some descriptive statistics)
@@ -51,7 +53,7 @@ You can see the data is significantly skewed to the right, which indicates it wo
 HOWEVER - after plotting the data it is evident that there is are a few values sitting around the $20 mark, and seems to be unusually low. This warrants some deeper investigation.
 
 ### 3.1 Investigating outliers
-To do so, we grabbed the 10 cheapest restaurants based on _average_cost_for_two_ and investigated them:
+To do so, we grabbed the 10 lowest cost restaurants based on _average_cost_for_two_ and investigated them:
 
 ![discarded-restaurants](discarded-restaurants.PNG)
 
