@@ -46,7 +46,7 @@ As a result we plot this on a histogram to visualise our data.
 
 ![Histogram V1](restaurants-histogramV1.PNG)
 
-You can see the data is significantly skewed to the left, which indicates it would be more appropriate to use the median as our measure of central tendency. We then find the median to be $80.00 with 48% of values to be below the median, this looks to be the more appropriate measure of central tendency.
+You can see the data is significantly skewed to the right, which indicates it would be more appropriate to use the median as our measure of central tendency. We then find the median to be $80.00 with 48% of values to be below the median, this looks to be the more appropriate measure of central tendency.
 
 HOWEVER - after plotting the data it is evident that there is are a few values sitting around the $20 mark, and seems to be unusually low. This warrants some deeper investigation.
 
