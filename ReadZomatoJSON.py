@@ -40,20 +40,18 @@ print(restaurantTable)
 
 # ANALYSIS SECTION #
 
-# Grab the 'average_cost_for_two' column
+# Compute the mean for 'average_cost_for_two'
 costs = restaurantTable['average_cost_for_two']
 avgCosts = costs.mean()
 print("Average Cost for Two = $", avgCosts)
 
-# Is the average the best way to measure central tendency of
-# the Top 100 Places for Dinner in Sydney?
 
-# First, lets have a quick look at how many restaurants are below the mean.
+# Compute percentage of values below the mean.
 belowCostMean = costs < costs.mean()
 numBelowCostMean = belowCostMean.sum()
-print("Number of restaurants below the average cost for two mean is = ",numBelowCostMean)
+print("Number of restaurants below the average cost for two mean is = ",numBelowCostMean*100/costs.count(), "%")
 
-# Let's look at the distribution with a histogram plot
+# Plot the distribution
 sns.set(style="ticks")
 x = sns.distplot(list(costs.values), kde=False, bins=25)
 x.xaxis.set_minor_locator(plt.MultipleLocator(5))
@@ -65,8 +63,7 @@ plt.ylabel("Number of Places")
 plt.title("Average Costs of Sydney's Top 100 Places for Dinner - V1")
 plt.show()
 
-# The distribution is significantly skewed to the left, with a few outliers - let's calculate the median
-# and how many values lie below the value.
+# Calculate the median and percentage of values that lie below the value.
 medianCost = costs.median()
 belowMedian = costs < medianCost
 numBelowMedian = belowMedian.sum()
@@ -83,7 +80,7 @@ print(cheapestRestaurants)
 
 # It looks to be that our result has returned a few restaurants that are in fact cafes which would explain
 # why their cost is so low. Looking at their cuisines they have "Ice Cream, Coffee and Tea, Cafe Food". Lets
-# these one's out.
+# take these one's out.
 
 # Create a list of cuisines we do not want, that will be used to filter out the cafes from the dataset
 discardCuisines = ['Ice Cream', 'Coffee and Tea', 'Cafe Food']
